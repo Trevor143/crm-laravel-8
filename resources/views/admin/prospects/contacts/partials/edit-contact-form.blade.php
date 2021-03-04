@@ -1,35 +1,35 @@
-<form action="{{ route('admin.prospects.contacts.update', $prospect_id) }}" method="POST">
+<form action="{{ route('admin.prospects.contacts.update', ['prospect'=>$prospect, 'contact'=>$contact] ) }}" method="POST">
     @csrf
     @method('PUT')
 
     <div class="form-group row">
         <label for="" class="col-md-3">Phone (Primary)</label>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="phone" value="{{ $contact->phone }}">
+            <input type="phone" class="form-control" name="phone" value="{{ $contact->phone }}">
         </div>
     </div>
     <div class="form-group row">
         <label for="" class="col-md-3">Phone Mobile</label>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="phone_mobile" value="{{ $contact->phone_mobile }}">
+            <input type="phone" class="form-control" name="phone_mobile" value="{{ $contact->phone_mobile }}">
         </div>
     </div>
     <div class="form-group row">
         <label for="" class="col-md-3">Fax</label>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="fax" value="{{ $contact->fax }}">
+            <input type="phone" class="form-control" name="fax" value="{{ $contact->fax }}">
         </div>
     </div>
     <div class="form-group row">
         <label for="" class="col-md-3">Address</label>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="address" value="{{ $contact->address }}">
+            <input type="address" class="form-control" name="address" value="{{ $contact->address }}">
         </div>
     </div>
     <div class="form-group row">
         <label for="" class="col-md-3">Address 2</label>
         <div class="col-md-9">
-            <input type="text" class="form-control" name="address_2" value="{{ $contact->address_2 }}">
+            <input type="address" class="form-control" name="address_2" value="{{ $contact->address_2 }}">
         </div>
     </div>
     <div class="form-group row">

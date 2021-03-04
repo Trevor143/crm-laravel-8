@@ -18,11 +18,11 @@
                           Actions
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="{{ route('admin.prospects.dashboard') }}">View Dashboard</a>
+                          <a class="dropdown-item" href="{{ route('admin.prospects.index') }}">View Dashboard</a>
                           <a class="dropdown-item" href={{ route('admin.prospects.show', ['prospect' => $prospect->id]) }}>View Prospect</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item text-danger" href="#" onclick="deleteProspect()">Delete Prospect</a>
-                            <form action="{{ route('admin.prospects.delete', $prospect->id) }}" id="delete-prospect-form" style="display:none" method="POST">
+                            <form action="{{ route('admin.prospects.destroy', $prospect->id) }}" id="delete-prospect-form" style="display:none" method="POST">
                                 @csrf
                                 @method('DELETE')
                             </form>
@@ -96,7 +96,7 @@
                     <h5>Edit Contact Details</h5>
                     <hr>
                     @if ($prospect->contact)
-                        @include('admin.prospects.contacts.partials.edit-contact-form', ['prospect_id' => $prospect->id, 'contact' => $prospect->contact])
+                        @include('admin.prospects.contacts.partials.edit-contact-form', ['prospect' => $prospect, 'contact' => $prospect->contact])
                     @else
                         <div class="d-flex">
                             <div class="mx-auto">

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Prospects\ProspectContactsController;
+use App\Http\Controllers\Admin\Prospects\ProspectsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,17 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->name('admin.')->group(function () {
+
+    Route::resource('prospects', ProspectsController::class);
+
+    // Route::get('{prospect}', function () {
+    //     Route::resource('contacts', ProspectContactsController::class);
+    // })->name('prospects.');
+
+    Route::resource('prospects.contacts', ProspectContactsController::class);
+
+});
 
 Route::prefix('prospects')->middleware('auth')->name('admin.prospects.')->group(base_path('routes/web/prospects.php'));

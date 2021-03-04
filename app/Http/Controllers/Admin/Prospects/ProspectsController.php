@@ -125,6 +125,6 @@ class ProspectsController extends Controller
 
         $prospect->delete();
 
-        return redirect()->route('admin.prospects.dashboard')->with('success', 'Successfully deleted prospect and all assets related to them.');
+        return redirect()->route('admin.prospects.index')->with('success', 'Successfully deleted prospect and all assets related to them.');
     }
 }

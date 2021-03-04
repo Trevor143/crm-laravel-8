@@ -23,7 +23,7 @@ class ProspectContactsController extends Controller
         return redirect()->route('admin.prospects.show', $prospect->id)->with('success', 'Successfully created a new prospect!');
     }
 
-    public function update(UpdateContactRequest $request, Prospect $prospect)
+    public function update(UpdateContactRequest $request, Prospect $prospect, ProspectContact $prospectContact)
     {
         $prospect->contact->update($request->validated());
 

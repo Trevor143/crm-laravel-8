@@ -55,7 +55,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('admin.prospects.dashboard') }}" class="dropdown-item">Manage Prospects</a>
+                                    <a href="{{ route('admin.prospects.index') }}" class="dropdown-item">Manage Prospects</a>
                                 </div>
                             </li>
 
